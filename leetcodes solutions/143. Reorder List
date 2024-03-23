@@ -1,0 +1,58 @@
+# You are given the head of a singly linked-list. The list can be represented as:
+
+# L0 → L1 → … → Ln - 1 → Ln
+# Reorder the list to be on the following form:
+
+# L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+# You may not modify the values in the list's nodes. Only nodes themselves may be changed.
+          
+# Example 1:
+
+# Input: head = [1,2,3,4]
+# Output: [1,4,2,3]
+
+# Example 2:
+
+# Input: head = [1,2,3,4,5]
+# Output: [1,5,2,4,3]
+ 
+
+{   Constraints: The number of nodes in the list is in the range [1, 5 * 104] .  1 <= Node.val <= 1000    }
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+
+
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+        vector<int> list;
+        ListNode * ptr=head->next;
+        while(ptr!=nullptr){ // storing the linked lists values in the array excluding the first value
+            list.push_back(ptr->val);
+            ptr=ptr->next;
+        }
+        ListNode * newptr=head->next;
+        int rear=list.size()-1;
+        int front=0;
+        for(int i=0;i<list.size();i++){ 
+            // index = index according to the linked list
+            if(i%2==0){//filing the odd index place with the n,n-1,n-2,... values
+                newptr->val=list[rear];
+                rear--;
+            }else{ //filing the even index place with the 1,2,3,.... values
+                newptr->val=list[front];
+                front++;
+            }
+            newptr=newptr->next;
+        }
+    }
+};
