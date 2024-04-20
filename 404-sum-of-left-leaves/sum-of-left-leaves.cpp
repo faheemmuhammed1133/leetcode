@@ -20,6 +20,7 @@ public:
             sum+=root->left->val;
         }
         sum+=sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
+            root=nullptr;
         return sum;
     }
 };
