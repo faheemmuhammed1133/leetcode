@@ -7,7 +7,7 @@ public:
                 }else{
                     s[0]='1';
                 }
-                }// true from here ..
+                }
             if(s[1]=='?'){
                 if(s[0]!='1' ){
                     s[1]='9';
