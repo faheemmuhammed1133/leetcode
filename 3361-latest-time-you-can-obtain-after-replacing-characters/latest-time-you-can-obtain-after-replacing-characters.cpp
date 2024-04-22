@@ -2,10 +2,9 @@ class Solution {
 public:
     string findLatestTime(string s) {
         vector<int> ind;
-        int c=0;
         for(int i=0;i<s.size();i++){
             if(s[i]=='?'){
-                ind.push_back(i);c++;
+                ind.push_back(i);
             }
         }
         for(int i=0;i<ind.size();i++){
