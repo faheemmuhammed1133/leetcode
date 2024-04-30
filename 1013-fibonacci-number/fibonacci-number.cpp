@@ -4,14 +4,15 @@ public:
         if(n<=1){
             return n;
         }
-        vector<int> arr(n+1,0);
-            arr[0]=0;
-            arr[1]=1;
-
+        int f=0;
+        int s=1;
+        int t=f+s;
         for(int i=2;i<=n;i++){
-            arr[i]=arr[i-1]+arr[i-2];
+            t=f+s;
+            f=s;
+            s=t;
         }
-        return arr[n];
+        return t;
         
     }
 };
