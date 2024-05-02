@@ -9,15 +9,13 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if(!head){
+        if(!head || !head->next){
             return false;
         }
         // floyd's cycle
         ListNode *slow = head, *fast = head;
-        while(true) {
+        while(fast->next  && fast->next->next) {
             slow = slow->next;
-            if(fast->next == NULL || fast->next->next == NULL)
-                break;
             fast = fast->next->next;
             if(slow == fast)
                 return true;
