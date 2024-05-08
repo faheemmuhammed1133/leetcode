@@ -8,7 +8,6 @@ public:
         if(n!=0){        
             for(int i=0;i<nums.size();i++){
                 if(nums[i]!=max){
-                    // cout<<nums[i]<<" here \n";
                     count=0;
                     max=nums[i];
                 }
@@ -16,8 +15,7 @@ public:
                 if(count>n){
                     return nums[i];
                 }
-                    
-                }
+            }
         }
         return nums[0];
     }
