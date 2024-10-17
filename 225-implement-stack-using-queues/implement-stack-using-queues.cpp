@@ -5,31 +5,23 @@ public:
     }
     
     void push(int x) {
-        cout<<x;
         
         res.push_back(x);
         
     }
     
     int pop() {
-        int a=res[res.size()-1];
-        res.erase(res.end());
+        int a=res.back();
+        res.pop_back();
         return a;
-        // return 0;
     }
     
     int top() {
-        return res[res.size()-1];
-        // return 0;
+        return res.back();
     }
     
     bool empty() {
-        if(res.size()>0)
-        // if(1>0)
-            return false;
-        else{
-            return true;
-        }
+        return res.empty();
     }
 };
 
