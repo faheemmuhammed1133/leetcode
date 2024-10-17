@@ -1,13 +1,9 @@
 class MyStack {
     vector<int> res;
 public:
-    MyStack() {
-    }
     
     void push(int x) {
-        
-        res.push_back(x);
-        
+        res.push_back(x);  
     }
     
     int pop() {
