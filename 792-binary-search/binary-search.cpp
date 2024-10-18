@@ -15,7 +15,6 @@ public:
             if(nums[mid]<t){
                 r=mid+1;
             }
-            cout<<nums[mid]<<" "<<t<<"\n";
         }
         return -1; 
     }
