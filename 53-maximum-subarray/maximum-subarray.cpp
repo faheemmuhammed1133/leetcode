@@ -3,7 +3,6 @@ public:
     int maxSubArray(vector<int>& nums) {
         int sum=0;
         if(nums.size()==1){
-            cout<<"this";
             return nums[0];
         }
         int maxi=nums[0];
