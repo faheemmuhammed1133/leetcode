@@ -20,11 +20,8 @@ public:
             if(root->right){
                 postorderTraversal(root->right);
             }
-            cout<<root->val;
             a.push_back(root->val);
         }
-            return a;
-        // return nullptr;
-        
+        return a;
     }
 };
