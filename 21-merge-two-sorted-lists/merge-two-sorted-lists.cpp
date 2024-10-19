@@ -29,22 +29,12 @@ public:
         for(int i=1;i<a.size();i++){
             ListNode* list3=new ListNode(a[i]);
             ptr->next=list3;
-            ptr = ptr->next;  // Move the pointer to the newly added node
+            ptr = ptr->next;  
             cout<<a[i];
         }
 
         return list;
         
-        // ListNode* a = list1;
-        // ListNode* ptr = list1;
-        // ListNode* preptr=ptr;
-        // while(!ptr || !list2){
-        //     cout<<" ";
-        //     if(ptr==nullptr){
-        //         ptr=list2;
-        //         break;
-        //     }
-        // }
-        //     return a;
+       
     }
 };
