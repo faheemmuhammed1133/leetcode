@@ -8,6 +8,6 @@ public:
             }
         }
         nums=newnum;
-        return newnum.size();
+        return nums.size();
     }
 };
