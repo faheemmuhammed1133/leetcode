@@ -61,10 +61,10 @@ public:
             return -1;
         }
         
-        node *currnode = mp[key];
-        remove(currnode);
-        insert(currnode);
-        return currnode->val;
+        node *curr = mp[key];
+        remove(curr);
+        insert(curr);
+        return curr->val;
         
     }
 
