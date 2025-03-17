@@ -45,9 +45,8 @@ public:
     }
     
     bool empty() {
-        if(s1.empty() && s2.empty()){
-            return true;
-        }else return false;
+        return s1.empty() && s2.empty();
+        
     }
 };
 
