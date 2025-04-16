@@ -1,44 +1,29 @@
 class Solution {
 public:
-    string longestPalindrome(string s) {
-        if (s.empty()) return "";
+    string longestPalindrome(string str) {
+        int n = str.length();
+        vector<vector<int> > dp(n,vector<int>(n,0));
+        int maxLen=0,si,se;
 
-        int start = 0;
-        int maxLength = 1;
-        int n = s.size();
-        bool table[n][n] ; // Create a boolean table to store results
-        for (int i = 0; i < n; i++) {
-            fill_n(table[i], n, false);
-        }
+        for(int g=0;g<n;g++){
+           for(int i = 0 , j=g; j<n;j++, i++){
+                if(g==0 ) {
+                    dp[i][j]=1;
+                }else if(g==1 && str[i]==str[j]){
+                    dp[i][j]=g+1;
+                }else if( str[i]== str[j] && dp[i+1][j-1]>0){
+                    dp[i][j]=g+1;
+                }
 
-        // All substrings of length 1 are palindromes
-        for (int i = 0; i < n; ++i) {
-            table[i][i] = true;
-        }
-
-        // Check for palindromes of length 2
-        for (int i = 0; i < n - 1; ++i) {
-            if (s[i] == s[i + 1]) {
-                table[i][i + 1] = true;
-                start = i;
-                maxLength = 2;
-            }
-        }
-
-        // Check for palindromes of length greater than 2
-        for (int k = 3; k <= n; ++k) {
-            for (int i = 0; i < n - k + 1; ++i) {
-                int j = i + k - 1;
-                if (table[i + 1][j - 1] && s[i] == s[j]) {
-                    table[i][j] = true;
-                    if (k > maxLength) {
-                        start = i;
-                        maxLength = k;
-                    }
+                if(maxLen <dp[i][j]){
+                    maxLen=dp[i][j];
+                    si=i;
+                    se=j;
                 }
             }
         }
-
-        return s.substr(start, maxLength);
+        // cout<<str.substr(si,se);
+        
+        return str.substr(si,se-si+1);
     }
 };
