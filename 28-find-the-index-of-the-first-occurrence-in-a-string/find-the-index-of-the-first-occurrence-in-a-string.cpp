@@ -4,8 +4,7 @@ public:
         int n=haystack.size(),m=needle.size();
         for (int i=0;i<=n-m;i++){
             if(haystack[i]==needle[0]){
-                string str= haystack.substr(i,m);
-                if(str==needle){
+                if(haystack.substr(i,m)==needle){
                     return i;
                 }
             }
