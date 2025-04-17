@@ -1,16 +1,19 @@
 class Solution {
 public:
+        int f=0;
+        int s=0;
+        int t=1;
+
     int fib(int n) {
         if(n<=1){
             return n;
         }
-        int f=0;
-        int s=1;
-        int t=f+s;
-        for(int i=2;i<=n;i++){
-            t=f+s;
+        if(n>0){
             f=s;
             s=t;
+            t=f+s;
+            n--;
+            fib(n);
         }
         return t;
         
