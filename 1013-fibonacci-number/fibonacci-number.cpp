@@ -1,21 +1,10 @@
 class Solution {
 public:
-        int f=0;
-        int s=0;
-        int t=1;
-
-    int fib(int n) {
-        if(n<=1){
-            return n;
+    int fib(int x) {
+        if((x<=1)) {
+            return(x);
+        }else {
+            return(fib(x-1)+fib(x-2));
         }
-        if(n>0){
-            f=s;
-            s=t;
-            t=f+s;
-            n--;
-            fib(n);
-        }
-        return t;
-        
     }
 };
