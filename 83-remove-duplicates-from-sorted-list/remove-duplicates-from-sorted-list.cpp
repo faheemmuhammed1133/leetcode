@@ -11,28 +11,19 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        // If list is empty or has only one element, no duplicates exist
         if (!head || !head->next) {
             return head;
         }
-
-        // Pointer to traverse the list
         ListNode* current = head;
 
-        // Traverse until the end of list
         while (current && current->next) {
             if (current->val == current->next->val) {
-                // Duplicate node found: skip it
                 ListNode* duplicate = current->next;
-                current->next = duplicate->next;
-                // Optionally free duplicate if using dynamic allocation
-                // delete duplicate;
+                current->next = duplicate->next; 
             } else {
-                // Move to next distinct element
                 current = current->next;
             }
         }
-
         return head;
     }
 };
