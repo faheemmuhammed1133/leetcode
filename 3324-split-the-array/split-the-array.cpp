@@ -6,7 +6,6 @@ public:
             for (int j=i+1;j<nums.size();j++){
                 if(nums[i]==nums[j]){
                     freq[i]+=1;
-                    cout<<freq[i]<<" -> i "<<i<< " j -> "<<j<<" \n";
                 }
                 if(freq[i]>1) return false;
             }
