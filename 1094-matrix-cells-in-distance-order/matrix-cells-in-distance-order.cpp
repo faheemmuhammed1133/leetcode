@@ -9,7 +9,7 @@ public:
             }
         }
         
-        // 2. Sort by Manhattan distance from (rCenter, cCenter)
+        // sorting 
         sort(cells.begin(), cells.end(),
              [rCenter, cCenter](const vector<int>& a, const vector<int>& b) {
                  int da = abs(a[0] - rCenter) + abs(a[1] - cCenter);
