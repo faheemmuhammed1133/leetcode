@@ -11,7 +11,6 @@ public:
             if(pow2 > n){
                 return pow2-1;
             }
-            cout<< pow2;
             pow2 =  pow(2 ,i);
             i++;
         }
