@@ -11,7 +11,7 @@ public:
             a = nums[i];
             b = nums[i+1];
             c = nums[i+2];
-            if(a+b>c && b+c >a && a+c > b){
+            if(b+c >a){
                 cout<<a+b+c;
                 return a+b+c;
             }
