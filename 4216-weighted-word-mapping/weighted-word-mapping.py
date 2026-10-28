@@ -9,9 +9,4 @@ class Solution:
         # Modulo + final char 
         final_index = [25-(val%26) for val in word_sum]"""
         
-        final_index = [25-(sum(weights[ord(ch.lower())-97] for ch in word)%26) for word in words]
-        print(final_index)
-        ans= ""
-
-        ans = "".join(chr(val + 97) for val in final_index)
-        return ans
+        return "".join(chr(val + 97) for val in [25-(sum(weights[ord(ch.lower())-97] for ch in word)%26) for word in words])
